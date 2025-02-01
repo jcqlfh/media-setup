@@ -2,7 +2,7 @@
 $composeDir = "."
 
 # Nome do arquivo principal
-$mainFile = "docker-compose.yml"
+$mainFile = "docker-compose.volumes.yml"
 
 
 # Encontra todos os arquivos .yml no diretório, excluindo o principal

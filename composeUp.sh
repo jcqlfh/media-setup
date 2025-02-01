@@ -6,7 +6,7 @@ export MEDIA_PATH=/mnt/d
 COMPOSE_DIR="."
 
 # Arquivo principal que deve ser o primeiro
-MAIN_FILE="docker-compose.yml"
+MAIN_FILE="docker-compose.volumes.yml"
 
 # Monta os arquivos adicionais, excluindo o arquivo principal
 ADDITIONAL_FILES=$(find "$COMPOSE_DIR" -name "*.yml" ! -name "$MAIN_FILE" -printf "-f %p ")

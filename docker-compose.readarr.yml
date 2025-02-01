@@ -1,0 +1,15 @@
+services:
+  readarr:
+    image: ghcr.io/hotio/readarr:latest
+    container_name: readarr
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - UMASK=002
+      - TZ=America/Fortaleza
+    volumes:
+      - readarr-config:/config
+      - media:/data
+    ports:
+      - 8787:8787
+    restart: unless-stopped

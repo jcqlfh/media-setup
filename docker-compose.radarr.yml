@@ -1,0 +1,20 @@
+services:
+  radarr:
+    image: ghcr.io/hotio/radarr:latest
+    container_name: radarr
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - UMASK=002
+      - TZ=America/Fortaleza
+    deploy:
+      resources:
+        limits:
+          cpus: "1"
+          memory: "1G"
+    volumes:
+      - radarr-config:/config
+      - media:/data
+    ports:
+      - 7878:7878
+    restart: unless-stopped

@@ -1,0 +1,15 @@
+services:
+  bazarr:
+    image: ghcr.io/hotio/bazarr:latest
+    container_name: bazarr
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - UMASK=002
+      - TZ=America/Fortaleza
+    volumes:
+      - bazarr-config:/config
+      - media:/data
+    ports:
+      - 6767:6767
+    restart: unless-stopped

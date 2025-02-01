@@ -1,0 +1,19 @@
+services:
+  prowlarr:
+    image: ghcr.io/hotio/prowlarr:latest
+    container_name: prowlarr
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - UMASK=002
+      - TZ=America/Fortaleza
+    deploy:
+      resources:
+        limits:
+          cpus: "1"
+          memory: "1G"
+    volumes:
+      - prowlarr-config:/config
+    ports:
+      - 9696:9696
+    restart: unless-stopped

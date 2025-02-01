@@ -1,0 +1,43 @@
+volumes:
+  media:
+    driver: local
+    driver_opts:
+      device: ${MEDIA_PATH}
+      o: bind
+      type: none
+  torrents:
+    driver: local
+    driver_opts:
+      device: ${MEDIA_PATH}/torrents
+      o: bind
+      type: none
+  radarr-config:
+    driver: local
+    driver_opts:
+      device: ${MEDIA_PATH}/configs/radarr
+      o: bind
+      type: none
+  sonarr-config:
+    driver: local
+    driver_opts:
+      device: ${MEDIA_PATH}/configs/sonarr
+      o: bind
+      type: none
+  readarr-config:
+    driver: local
+    driver_opts:
+      device: ${MEDIA_PATH}/configs/readarr
+      o: bind
+      type: none
+  prowlarr-config:
+    driver: local
+    driver_opts:
+      device: ${MEDIA_PATH}/configs/prowlarr
+      o: bind
+      type: none
+  bazarr-config:
+    driver: local
+    driver_opts:
+      device: ${MEDIA_PATH}/configs/bazarr
+      o: bind
+      type: none

@@ -1,0 +1,20 @@
+services:
+  sonarr:
+    image: ghcr.io/hotio/sonarr:latest
+    container_name: sonarr
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - UMASK=002
+      - TZ=America/Fortaleza
+    deploy:
+      resources:
+        limits:
+          cpus: "1"
+          memory: "1G"
+    volumes:
+      - sonarr-config:/config
+      - media:/data
+    ports:
+      - 8989:8989
+    restart: unless-stopped
